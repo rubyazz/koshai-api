@@ -119,7 +119,7 @@ Response:
             id,
             menu_items: [
                 {quantity, menu_item_id}
-            ]            
+            ]
         }
     ],
     page_index: 0,
@@ -155,7 +155,7 @@ Response:
             restraunt: {
                 address,
                 distance
-            }         
+            }
             customer: {
                 address,
                 distance

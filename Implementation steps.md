@@ -2,12 +2,12 @@
 
 1. Проектирование
 
-- DB, REST API, Actor 
+- DB, REST API, Actor
 - Бизнес аналитика, планирование бюджета
 
 2. Proof of concept
 
-- DB, backend service mock up 
+- DB, backend service mock up
 
 3. Dev environment
 
