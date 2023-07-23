@@ -1,5 +1,6 @@
 # koshai-api
 `need to add docker`
+`need to read about rabbitMQ or redis`
 
 ![Flows drawio](https://github.com/rubyazz/koshai-api/assets/98265750/ac99bb0c-2507-44fa-b044-cc673cc352bd)
 
