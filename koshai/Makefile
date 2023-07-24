@@ -30,6 +30,9 @@ shell:
 collectstatic:
 	$(DJANGO) collectstatic --noinput
 
+pre-commit:
+	pre-commit run --all-files
+
 clean:
 	find . -name "*.pyc" -exec rm -f {} \;
 	rm -rf __pycache__/
