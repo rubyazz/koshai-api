@@ -38,11 +38,19 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework_swagger",
+    "rest_framework",
+    "rest_framework.authtoken",
+    "rest_auth",
+    "rest_framework_simplejwt",
+    "django_filters",
     "couriers",
     "orders",
     "restaurants",
     "users",
 ]
+
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
