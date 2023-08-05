@@ -22,5 +22,5 @@ from . import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.main, name="main"),
-    path("api/", include("koshai.api.routers", namespace="api")),
+    path("api/", include("api.users.urls", namespace="api")),
 ]
