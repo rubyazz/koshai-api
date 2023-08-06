@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.gis",
     "rest_framework_swagger",
     "rest_framework",
     "rest_framework.authtoken",
@@ -89,7 +90,7 @@ WSGI_APPLICATION = "koshai.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "ENGINE": "django.contrib.gis.db.backends.postgis",
         "NAME": "koshai",
         "USER": "koshai",
         "PASSWORD": "koshai",
