@@ -1,6 +1,7 @@
 from django.contrib.gis.db import models
 from django.utils.translation import gettext_lazy as _
 
+
 class Courier(models.Model):
     phone = models.CharField(_("phone"), max_length=16)
     status = models.CharField(
@@ -19,4 +20,3 @@ class Courier(models.Model):
 
     def __str__(self) -> str:
         return f"Courier: {self.first_name}"
-
