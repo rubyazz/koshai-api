@@ -23,6 +23,7 @@ schema_view = get_swagger_view(title="Koshai API")
 from . import views
 
 urlpatterns = [
+    path('grappelli/', include('grappelli.urls')), # grappelli URLS
     path("admin/", admin.site.urls),
     path("", views.main, name="main"),
     path("api/", include("api.users.urls", namespace="api")),
