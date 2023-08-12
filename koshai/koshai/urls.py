@@ -26,6 +26,6 @@ urlpatterns = [
     path('grappelli/', include('grappelli.urls')), # grappelli URLS
     path("admin/", admin.site.urls),
     path("", views.main, name="main"),
-    path("api/", include("api.users.urls", namespace="api")),
+    path("api/", include("api.routers")),
     path("docs/", schema_view),
 ]
