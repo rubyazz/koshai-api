@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from django.contrib import admin
+
 
 class Order(models.Model):
     STATUS_CHOICES = [
@@ -18,7 +18,9 @@ class Order(models.Model):
         choices=STATUS_CHOICES,
         default="PENDING",
     )
-    courier = models.ForeignKey("couriers.Courier", on_delete=models.SET_NULL, null=True, blank=True)
+    courier = models.ForeignKey(
+        "couriers.Courier", on_delete=models.SET_NULL, null=True, blank=True
+    )
     timestamp = models.DateTimeField(_("timestamp"), auto_now_add=True)
 
     def __str__(self):

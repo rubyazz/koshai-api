@@ -1,7 +1,8 @@
-from django.db import models
-from django.contrib.auth.models import User
-from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
+from django.db import models
+from django.utils.translation import gettext_lazy as _
+from users.models import CustomUser
+
 
 def validate_image_file_size(image):
     max_size = 1024 * 1024  # 1MB
@@ -9,12 +10,11 @@ def validate_image_file_size(image):
     if image.size > max_size:
         raise ValidationError("File size should not exceed 1MB.")
 
+
 class Customer(models.Model):
     phone = models.CharField(_("phone"), max_length=16)
-    email = models.EmailField(_("email"), unique=True)
     address = models.TextField(_("address"))
-    user = models.ForeignKey("users.CustomUser",
-        on_delete=models.CASCADE,)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     avatar = models.ImageField(
         _("Avatar"),
         upload_to="customer/avatars/",
@@ -25,6 +25,11 @@ class Customer(models.Model):
         validators=[validate_image_file_size],
     )
     is_active = models.BooleanField(_("active"), default=True)
+    full_name = models.CharField(
+        _("Full Name"),
+        max_length=255,
+        null=True,
+    )  # Added this field
 
     def __str__(self):
-        return self.user.username
+        return self.full_name  # Change to the appropriate field for display
