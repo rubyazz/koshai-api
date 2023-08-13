@@ -1,6 +1,5 @@
-from rest_framework_simplejwt.views import TokenViewBase
-
 from api.restauth.serializers import LoginSerializer
+from rest_framework_simplejwt.views import TokenViewBase
 
 
 class ObtainTokenView(TokenViewBase):

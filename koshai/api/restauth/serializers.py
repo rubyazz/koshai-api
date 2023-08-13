@@ -1,3 +1,4 @@
+from api.users.serializers import UserSerializer
 from django.contrib.auth import authenticate
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
@@ -8,8 +9,6 @@ from rest_framework_simplejwt.serializers import (
 )
 from rest_framework_simplejwt.settings import api_settings
 from rest_framework_simplejwt.tokens import RefreshToken, Token
-
-from api.users.serializers import UserSerializer
 
 
 class KoshaiTokenObtainPairSerializer(TokenObtainPairSerializer):
@@ -24,6 +23,7 @@ class KoshaiTokenObtainPairSerializer(TokenObtainPairSerializer):
         validated_data["user"] = UserSerializer(instance=user).data
 
         return validated_data
+
 
 class KoshaiTokenVerifySerializer(TokenVerifySerializer):
     @property

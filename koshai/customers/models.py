@@ -29,7 +29,6 @@ class Customer(models.Model):
         validators=[validate_image_file_size],
     )
     is_active = models.BooleanField(_("active"), default=True)
-    
 
     def __str__(self):
         return self.full_name  # Change to the appropriate field for display

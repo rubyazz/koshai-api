@@ -1,5 +1,5 @@
-from django.urls import include, path
 from api.restauth.views import ObtainTokenView
+from django.urls import include, path
 from rest_framework_simplejwt.views import TokenVerifyView
 
 app_name = "api"
