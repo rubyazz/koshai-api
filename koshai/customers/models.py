@@ -33,6 +33,3 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.full_name  # Change to the appropriate field for display
-
-
-# ignore TODO: need to move phone number from customers to users
