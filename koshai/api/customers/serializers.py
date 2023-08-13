@@ -8,8 +8,9 @@ class CustomerListSerializer(serializers.ModelSerializer):
         model = Customer
         fields = (
             "id",
-            "phone",
             "full_name",
+            "address",
+            "is_active",
         )
 
 
@@ -21,7 +22,6 @@ class CustomerDetailsSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "full_name",
-            "phone",
             "address",
             "user",
             "avatar",
