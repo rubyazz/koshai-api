@@ -10,7 +10,9 @@ class Order(models.Model):
         ("CANCELLED", "Cancelled"),
     ]
 
-    customer = models.ForeignKey("customers.Customer", on_delete=models.CASCADE)
+    customer = models.ForeignKey(
+        "customers.Customer", on_delete=models.CASCADE, related_name="orders"
+    )
     restaurant = models.ForeignKey("restaurants.Restaurant", on_delete=models.CASCADE)
     status = models.CharField(
         _("status"),

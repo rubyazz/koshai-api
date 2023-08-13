@@ -29,7 +29,10 @@ class Customer(models.Model):
         _("Full Name"),
         max_length=255,
         null=True,
-    )  # Added this field
+    )
 
     def __str__(self):
         return self.full_name  # Change to the appropriate field for display
+
+
+# ignore TODO: need to move phone number from customers to users

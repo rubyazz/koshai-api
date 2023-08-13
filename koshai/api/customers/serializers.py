@@ -27,3 +27,6 @@ class CustomerDetailsSerializer(serializers.ModelSerializer):
             "avatar",
             "is_active",
         )
+
+
+# TODO: when you registered u need to automatically create customer for this user
