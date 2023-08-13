@@ -1,4 +1,6 @@
 from django.urls import include, path
+from api.restauth.views import ObtainTokenView
+from rest_framework_simplejwt.views import TokenVerifyView
 
 app_name = "api"
 
@@ -8,4 +10,6 @@ urlpatterns = [
     path("", include("api.customers.urls", namespace="customers")),
     path("", include("api.orders.urls", namespace="orders")),
     # path("", include("api.restaurants.urls", namespace="users")),
+    path("token/", ObtainTokenView.as_view(), name="token_obtain"),
+    path("token/verify/", TokenVerifyView.as_view(), name="token_verify"),
 ]

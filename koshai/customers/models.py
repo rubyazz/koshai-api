@@ -12,7 +12,11 @@ def validate_image_file_size(image):
 
 
 class Customer(models.Model):
-    phone = models.CharField(_("phone"), max_length=16)
+    full_name = models.CharField(
+        _("Full Name"),
+        max_length=255,
+        null=True,
+    )
     address = models.TextField(_("address"))
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     avatar = models.ImageField(
@@ -25,11 +29,7 @@ class Customer(models.Model):
         validators=[validate_image_file_size],
     )
     is_active = models.BooleanField(_("active"), default=True)
-    full_name = models.CharField(
-        _("Full Name"),
-        max_length=255,
-        null=True,
-    )
+    
 
     def __str__(self):
         return self.full_name  # Change to the appropriate field for display

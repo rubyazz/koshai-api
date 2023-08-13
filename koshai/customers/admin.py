@@ -8,7 +8,6 @@ class CustomerAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "full_name",
-        "phone",
         "address",
         "user",
         "avatar",
@@ -18,4 +17,4 @@ class CustomerAdmin(admin.ModelAdmin):
         "full_name",
         "is_active",
     )
-    search_fields = ("phone", "user__username")
+    search_fields = ("user__username",)
