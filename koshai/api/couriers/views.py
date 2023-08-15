@@ -1,7 +1,8 @@
+from api.permissions import IsCourier
+from couriers.models import Courier
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
-from couriers.models import Courier
-from api.permissions import IsCourier
+
 from .serializers import CourierDetailsSerializer, CourierListSerializer
 
 

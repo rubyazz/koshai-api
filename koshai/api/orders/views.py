@@ -1,9 +1,11 @@
+from api.permissions import IsCustomer
+from customers.models import Customer
+from orders.models import Order
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
-from api.permissions import IsCustomer
+
 from .serializers import OrderSerializer
-from orders.models import Order
-from customers.models import Customer
+
 
 class CreateOrderView(generics.CreateAPIView):
     serializer_class = OrderSerializer
@@ -12,6 +14,7 @@ class CreateOrderView(generics.CreateAPIView):
     def perform_create(self, serializer):
         customer = Customer.objects.get(user=self.request.user)
         serializer.save(customer=customer)
+
 
 class OrderHistoryView(generics.ListAPIView):
     serializer_class = OrderSerializer

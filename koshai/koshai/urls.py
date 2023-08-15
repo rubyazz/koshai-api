@@ -14,6 +14,6 @@ urlpatterns = [
     path("", views.main, name="main"),
     path("api/", include("api.routers")),
     path("docs/", schema_view),
-     path('api/drf-auth/', include('rest_framework.urls')),
+    path("api/drf-auth/", include("rest_framework.urls")),
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
 ]

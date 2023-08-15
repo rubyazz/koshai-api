@@ -1,7 +1,8 @@
+from api.permissions import IsCustomer
 from customers.models import Customer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
-from api.permissions import IsCustomer
+
 from .serializers import CustomerDetailsSerializer, CustomerListSerializer
 
 

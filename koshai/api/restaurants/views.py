@@ -1,7 +1,8 @@
+from api.permissions import IsRestaurant
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 from restaurants.models import Restaurant
-from api.permissions import IsRestaurant
+
 from .serializers import RestaurantDetailsSerializer, RestaurantListSerializer
 
 

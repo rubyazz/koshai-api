@@ -8,4 +8,3 @@ router = routers.DefaultRouter()
 router.register(r"couriers/couriers", CourierViewSet, basename="couriers")
 
 urlpatterns = router.urls
-

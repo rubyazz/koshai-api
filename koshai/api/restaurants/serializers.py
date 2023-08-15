@@ -1,9 +1,11 @@
-from restaurants.models import Restaurant
-from rest_framework import serializers
 from api.users.serializers import UserSerializer
+from rest_framework import serializers
+from restaurants.models import Restaurant
+
 
 class RestaurantListSerializer(serializers.ModelSerializer):
     user = UserSerializer()
+
     class Meta:
         model = Restaurant
         fields = (
@@ -17,6 +19,7 @@ class RestaurantListSerializer(serializers.ModelSerializer):
 
 class RestaurantDetailsSerializer(serializers.ModelSerializer):
     user = UserSerializer()
+
     class Meta:
         model = Restaurant
         fields = (
