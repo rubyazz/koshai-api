@@ -9,14 +9,12 @@ class CourierAdmin(admin.ModelAdmin):
         "id",
         "first_name",
         "last_name",
-        "phone",
         "user",
         "status",
         "coordinates",
     )
     list_filter = ("status",)
     search_fields = (
-        "phone",
         "first_name",
         "last_name",
     )
@@ -24,7 +22,7 @@ class CourierAdmin(admin.ModelAdmin):
         (
             None,
             {
-                "fields": ("phone", "first_name", "last_name", "user", "status", "coordinates"),
+                "fields": ("first_name", "last_name", "user", "status", "coordinates"),
             },
         ),
     )

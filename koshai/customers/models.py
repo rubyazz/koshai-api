@@ -18,7 +18,7 @@ class Customer(models.Model):
         null=True,
     )
     address = models.TextField(_("address"))
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, unique=True)
     avatar = models.ImageField(
         _("Avatar"),
         upload_to="customer/avatars/",
@@ -32,3 +32,6 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.full_name  # Change to the appropriate field for display
+
+
+# TODO: need to add auto creating Object(couriers, restaurants, customer) by roles during register of user
