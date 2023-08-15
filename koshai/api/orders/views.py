@@ -1,22 +1,22 @@
-from django.shortcuts import get_object_or_404
-from rest_framework import generics, status
+from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
+from api.permissions import IsCustomer
 from .serializers import OrderSerializer
+from orders.models import Order
 from customers.models import Customer
 
 class CreateOrderView(generics.CreateAPIView):
     serializer_class = OrderSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsCustomer]
 
     def perform_create(self, serializer):
-        customer = get_object_or_404(Customer, user=self.request.user)
+        customer = Customer.objects.get(user=self.request.user)
         serializer.save(customer=customer)
 
 class OrderHistoryView(generics.ListAPIView):
     serializer_class = OrderSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsCustomer]
 
     def get_queryset(self):
-        customer = get_object_or_404(Customer, user=self.request.user)
+        customer = Customer.objects.get(user=self.request.user)
         return Order.objects.filter(customer=customer)

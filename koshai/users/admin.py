@@ -10,6 +10,7 @@ class CustomUserAdmin(UserAdmin):
         "last_name",
         "email",
         "phone_number",
+        "role",
         "is_active",
     )
 
