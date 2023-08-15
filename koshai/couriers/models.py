@@ -4,9 +4,7 @@ from users.models import CustomUser
 
 
 class Courier(models.Model):
-    user = models.ForeignKey(
-        CustomUser, on_delete=models.CASCADE, unique=True, default=4
-    )  # new field
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)  # new field
     status = models.CharField(
         _("status"),
         max_length=32,

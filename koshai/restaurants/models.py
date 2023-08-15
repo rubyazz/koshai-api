@@ -10,9 +10,7 @@ class Restaurant(models.Model):
     ]
 
     name = models.CharField(_("name"), max_length=100)
-    user = models.ForeignKey(
-        CustomUser, on_delete=models.CASCADE, unique=True, default=1
-    )
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     address = models.TextField(_("address"))
     status = models.CharField(
         _("status"),

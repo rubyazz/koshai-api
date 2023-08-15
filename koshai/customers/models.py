@@ -18,7 +18,7 @@ class Customer(models.Model):
         null=True,
     )
     address = models.TextField(_("address"))
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, unique=True)
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     avatar = models.ImageField(
         _("Avatar"),
         upload_to="customer/avatars/",
