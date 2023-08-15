@@ -8,6 +8,8 @@ class RestaurantListSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "name",
+            "address",
+            "status",
         )
 
 
