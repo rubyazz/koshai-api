@@ -1,9 +1,11 @@
 from django.contrib.gis.db import models
 from django.utils.translation import gettext_lazy as _
+from users.models import CustomUser
 
 
 class Courier(models.Model):
     phone = models.CharField(_("phone"), max_length=16)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, unique=True, default=4) # new field
     status = models.CharField(
         _("status"),
         max_length=32,

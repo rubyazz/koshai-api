@@ -10,6 +10,7 @@ class CourierAdmin(admin.ModelAdmin):
         "first_name",
         "last_name",
         "phone",
+        "user",
         "status",
         "coordinates",
     )
@@ -23,7 +24,7 @@ class CourierAdmin(admin.ModelAdmin):
         (
             None,
             {
-                "fields": ("phone", "first_name", "last_name", "status", "coordinates"),
+                "fields": ("phone", "first_name", "last_name", "user", "status", "coordinates"),
             },
         ),
     )
