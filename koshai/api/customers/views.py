@@ -1,14 +1,14 @@
 from customers.models import Customer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
-
+from api.permissions import IsCustomer
 from .serializers import CustomerDetailsSerializer, CustomerListSerializer
 
 
 class CustomerViewSet(ModelViewSet):
     queryset = Customer.objects.all()
     serializer_class = CustomerListSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsCustomer]
 
     def get_serializer_class(self):
         if self.action in ("retrieve", "update"):

@@ -26,6 +26,13 @@ class CustomUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
+
+    ROLE_CHOICES = [
+        ("restaurant", "Restaurant"),
+        ("courier", "Courier"),
+        ("customer", "Customer"),
+    ]
+
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     phone_number = models.CharField(
@@ -35,6 +42,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     )
     nickname = models.CharField(max_length=30)
     email = models.EmailField(unique=True)
+    role = models.CharField(
+        max_length=20,
+        choices=ROLE_CHOICES,
+        default="customer",
+    )
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
@@ -67,8 +79,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
-    def has_perm(self, perm, obj=None):
-        return self.is_staff
+    def has_role(self, role):
+        return self.role == role
 
     def has_module_perms(self, app_label):
         return self.is_staff

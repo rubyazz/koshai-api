@@ -16,7 +16,7 @@ class CustomUserAdmin(UserAdmin):
     search_fields = ("first_name", "last_name", "email")
 
     fieldsets = (
-        (None, {"fields": ("email", "phone_number", "password")}),
+        ("Login", {"fields": ("email", "phone_number", "password", "role")}),
         ("Personal Info", {"fields": ("first_name", "last_name")}),
         (
             "Permissions",
