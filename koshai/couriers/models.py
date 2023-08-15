@@ -20,4 +20,4 @@ class Courier(models.Model):
     coordinates = models.PointField(_("coordinates"), blank=True)
 
     def __str__(self) -> str:
-        return f"Courier: {self.first_name}"
+        return f"Courier: {self.first_name}" or self.user.email
