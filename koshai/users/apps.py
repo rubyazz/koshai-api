@@ -6,4 +6,7 @@ class UsersConfig(AppConfig):
     name = "users"
 
     def ready(self):
-        import users.signals 
+        try:
+            import users.signals  # noqa F401
+        except ImportError:
+            pass

@@ -1,9 +1,10 @@
+from couriers.models import Courier
+from customers.models import Customer
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from users.models import CustomUser
-from couriers.models import Courier
 from restaurants.models import Restaurant
-from customers.models import Customer
+from users.models import CustomUser
+
 
 @receiver(post_save, sender=CustomUser)
 def create_related_objects(sender, instance, created, **kwargs):
