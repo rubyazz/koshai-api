@@ -33,6 +33,9 @@ collectstatic:
 pre-commit:
 	pre-commit run --all-files
 
+dbshell:
+	$(DJANGO) dbshell
+
 clean:
 	find . -name "*.pyc" -exec rm -f {} \;
 	rm -rf __pycache__/

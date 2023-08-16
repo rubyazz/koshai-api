@@ -13,7 +13,6 @@ class CourierListSerializer(serializers.ModelSerializer):
             "first_name",
             "last_name",
             "user",
-            "phone",
             "status",
             "coordinates",
         )
@@ -29,7 +28,6 @@ class CourierDetailsSerializer(serializers.ModelSerializer):
             "first_name",
             "last_name",
             "user",
-            "phone",
             "status",
             "coordinates",
         )

@@ -7,6 +7,7 @@ from .serializers import CustomerDetailsSerializer, CustomerListSerializer
 
 
 class CustomerViewSet(ModelViewSet):
+    """ CRUD api of customers"""
     queryset = Customer.objects.all()
     serializer_class = CustomerListSerializer
     permission_classes = [IsAuthenticated, IsCustomer]
