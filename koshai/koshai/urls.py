@@ -2,9 +2,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from rest_framework_swagger.views import get_swagger_view
 from django.views.generic import TemplateView
-
+from rest_framework_swagger.views import get_swagger_view
 
 from . import views
 
@@ -15,7 +14,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("main/", views.main, name="main"),
     path("", TemplateView.as_view(template_name="pages/index.html"), name="home"),
-
     path("api/", include("api.routers")),
     path("docs/", schema_view),
     path("api/drf-auth/", include("rest_framework.urls")),

@@ -24,11 +24,11 @@ body{
 .header{
 	height: 600px;
 	width: 100%;
-	background-image: url(img/Sliced-Onion.png), url(img/green.png), url(img/salat.png); 
-	background-repeat: no-repeat; 
-	background-size: 15%, 6%, 80%; 
+	background-image: url(img/Sliced-Onion.png), url(img/green.png), url(img/salat.png);
+	background-repeat: no-repeat;
+	background-size: 15%, 6%, 80%;
 	background-position: 47% 85%, 47% 60%, top right;
-	background-color: #f4f5f7; 
+	background-color: #f4f5f7;
 }
 
 .content-shape{
@@ -67,7 +67,7 @@ h1{
 	align-items: center;
 	width: 18%;
 	height: 70px;
-	margin-top: 50px; 
+	margin-top: 50px;
 	border-radius: 10px;
 }
 
@@ -103,7 +103,7 @@ h1{
 .find-food{
 	height: 550px;
 	width: 100%;
-	background-image: url('img/find-food-main.png'), url('img/find-food-green.png'); 
+	background-image: url('img/find-food-main.png'), url('img/find-food-green.png');
 	background-repeat: no-repeat;
 	background-size: 30% 80%, 10%;
 	background-position: 10% center, 75% 5%;
@@ -135,7 +135,7 @@ h1{
 	padding: 3.5% 5%;
 	color: #fff;
 	border-radius: 10px;
-	border-color: #fff; 
+	border-color: #fff;
 	text-decoration: none;
 }
 
@@ -169,7 +169,7 @@ h1{
 	padding: 2% 4%;
 	color: #fff;
 	border-radius: 10px;
-	border-color: #fff; 
+	border-color: #fff;
 	text-decoration: none;
 	display: block;
 	margin: 50px 0px 0px 0px;
@@ -299,7 +299,7 @@ h1{
 	padding: 20px 40px;
 	color: #fff;
 	border-radius: 10px;
-	border-color: #fff; 
+	border-color: #fff;
 	text-decoration: none;
 	margin-top: 40px;
 	display: block;
@@ -419,7 +419,7 @@ h1{
 
 .column a{
 	text-decoration: none;
-	color: #fff; 
+	color: #fff;
 	margin-top: 30px;
 }
 
@@ -556,7 +556,7 @@ h1{
 	width: 150px;
 	}
 
-	
+
 
 
 
@@ -620,8 +620,8 @@ h1{
 
 
 @media (max-width: 1025px){
-	.header{  
-	background-position: 47% 55%, 48% 42%, top right; 
+	.header{
+	background-position: 47% 55%, 48% 42%, top right;
 	}
 
 	.track-your-food-content{
@@ -658,7 +658,7 @@ h1{
 	padding: 15px 30px;
 	color: #fff;
 	border-radius: 10px;
-	border-color: #fff; 
+	border-color: #fff;
 	text-decoration: none;
 	margin-top: 40px;
 	display: block;
@@ -676,11 +676,11 @@ h1{
 	.header{
 		height: 350px;
 		width: 100%;
-		background-image: url(img/Sliced-Onion.png), url(img/green.png), url(img/salat.png); 
-		background-repeat: no-repeat; 
-		background-size: 15%, 6%, 80%; 
+		background-image: url(img/Sliced-Onion.png), url(img/green.png), url(img/salat.png);
+		background-repeat: no-repeat;
+		background-size: 15%, 6%, 80%;
 		background-position: 47% 85%, 47% 60%, top right;
-		background-color: #f4f5f7; 
+		background-color: #f4f5f7;
 	}
 
 	.main-content{
@@ -709,7 +709,7 @@ h1{
 		align-items: center;
 		width: 18%;
 		height: 50px;
-		margin-top: 50px; 
+		margin-top: 50px;
 		border-radius: 10px;
 	}
 
@@ -743,7 +743,7 @@ h1{
 	.find-food{
 		height: 300px;
 		width: 100%;
-		background-image: url('img/find-food-main.png'), url('img/find-food-green.png'); 
+		background-image: url('img/find-food-main.png'), url('img/find-food-green.png');
 		background-repeat: no-repeat;
 		background-size: 30% 80%, 10%;
 		background-position: 10% center, 75% 5%;
@@ -775,9 +775,9 @@ h1{
 		padding: 3.5% 5%;
 		color: #fff;
 		border-radius: 10px;
-		border-color: #fff; 
+		border-color: #fff;
 		text-decoration: none;
-	}	
+	}
 
 	.local-restaurants{
 		width: 100%;
@@ -805,7 +805,7 @@ h1{
 		padding: 2% 2%;
 		color: #fff;
 		border-radius: 10px;
-		border-color: #fff; 
+		border-color: #fff;
 		text-decoration: none;
 		display: block;
 		margin: 50px 0px 0px 0px;
@@ -977,7 +977,7 @@ h1{
 
 	.column a{
 		text-decoration: none;
-		color: #fff; 
+		color: #fff;
 		margin-top: 30px;
 	}
 
@@ -1001,7 +1001,7 @@ h1{
 
 	.apps-images img{
 		margin-right: 10px;
-	}			
+	}
 }
 
 
@@ -1014,11 +1014,11 @@ h1{
 	.header{
 		height: 200px;
 		width: 100%;
-		background-image: url(img/Sliced-Onion.png), url(img/green.png), url(img/salat.png); 
-		background-repeat: no-repeat; 
-		background-size: 15%, 6%, 80%; 
+		background-image: url(img/Sliced-Onion.png), url(img/green.png), url(img/salat.png);
+		background-repeat: no-repeat;
+		background-size: 15%, 6%, 80%;
 		background-position: 47% 85%, 47% 60%, top right;
-		background-color: #f4f5f7; 
+		background-color: #f4f5f7;
 	}
 
 	.main-content{
@@ -1047,7 +1047,7 @@ h1{
 		align-items: center;
 		width: 18%;
 		height: 30px;
-		margin-top: 20px; 
+		margin-top: 20px;
 		border-radius: 10px;
 	}
 
@@ -1081,7 +1081,7 @@ h1{
 	.find-food{
 		height: 150px;
 		width: 100%;
-		background-image: url('img/find-food-main.png'), url('img/find-food-green.png'); 
+		background-image: url('img/find-food-main.png'), url('img/find-food-green.png');
 		background-repeat: no-repeat;
 		background-size: 30% 80%, 10%;
 		background-position: 10% center, 75% 5%;
@@ -1091,7 +1091,7 @@ h1{
 		padding: 8% 0px 0px 40%;
 	}
 
-	
+
 	.find-food-content h2{
 		font-family: 'Kayak Sans Bold';
 		font-size: 100%;
@@ -1114,9 +1114,9 @@ h1{
 		padding: 3.5% 5%;
 		color: #fff;
 		border-radius: 5px;
-		border-color: #fff; 
+		border-color: #fff;
 		text-decoration: none;
-	}	
+	}
 
 	.local-restaurants{
 		width: 100%;
@@ -1144,7 +1144,7 @@ h1{
 		padding: 2% 2%;
 		color: #fff;
 		border-radius: 5px;
-		border-color: #fff; 
+		border-color: #fff;
 		text-decoration: none;
 		display: block;
 		margin: 20px 0px 0px 0px;
@@ -1235,7 +1235,7 @@ h1{
 		padding: 10px 10px;
 		color: #fff;
 		border-radius: 10px;
-		border-color: #fff; 
+		border-color: #fff;
 		text-decoration: none;
 		margin-top: 30px;
 		display: block;
@@ -1336,7 +1336,7 @@ h1{
 
 	.column a{
 		text-decoration: none;
-		color: #fff; 
+		color: #fff;
 		margin-top: 30px;
 	}
 
@@ -1360,5 +1360,5 @@ h1{
 
 	.apps-images img{
 		margin-right: 10px;
-	}			
+	}
 }
