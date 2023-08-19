@@ -1,6 +1,5 @@
 from api.mixins import RoleRequiredMixin
 from customers.models import Customer
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
 from .serializers import CustomerDetailsSerializer, CustomerListSerializer
@@ -11,7 +10,7 @@ class CustomerViewSet(RoleRequiredMixin, ModelViewSet):
 
     queryset = Customer.objects.all()
     serializer_class = CustomerListSerializer
-    roles_required = ["customer"] 
+    roles_required = ["customer"]
 
     def get_serializer_class(self):
         if self.action in ("retrieve", "update"):

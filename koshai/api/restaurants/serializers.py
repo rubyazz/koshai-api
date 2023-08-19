@@ -36,6 +36,7 @@ class CategoryMenuItemSerializer(serializers.ModelSerializer):
         model = CategoryMenuItem
         fields = ("id", "name", "is_active")
 
+
 class MenuItemSerializer(serializers.ModelSerializer):
     category = CategoryMenuItemSerializer()
 

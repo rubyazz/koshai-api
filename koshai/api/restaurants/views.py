@@ -1,24 +1,33 @@
-from rest_framework.viewsets import ModelViewSet
 from api.mixins import RoleRequiredMixin
-from restaurants.models import Restaurant, MenuItem, CategoryMenuItem
-from .serializers import RestaurantDetailsSerializer, RestaurantListSerializer, CategoryMenuItemSerializer, MenuItemSerializer
+from rest_framework.viewsets import ModelViewSet
+from restaurants.models import CategoryMenuItem, MenuItem, Restaurant
+
+from .serializers import (
+    CategoryMenuItemSerializer,
+    MenuItemSerializer,
+    RestaurantDetailsSerializer,
+    RestaurantListSerializer,
+)
+
 
 class RestaurantViewSet(RoleRequiredMixin, ModelViewSet):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantListSerializer
-    roles_required = ["restaurant"]  
+    roles_required = ["restaurant"]
 
     def get_serializer_class(self):
         if self.action in ("retrieve", "update"):
             return RestaurantDetailsSerializer
         return super().get_serializer_class()
 
+
 class CategoryMenuItemViewSet(RoleRequiredMixin, ModelViewSet):
     queryset = CategoryMenuItem.objects.all()
     serializer_class = CategoryMenuItemSerializer
-    roles_required = ["customer", "restaurant"] 
+    roles_required = ["customer", "restaurant"]
+
 
 class MenuItemViewSet(RoleRequiredMixin, ModelViewSet):
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
-    roles_required = ["customer", "restaurant"] 
+    roles_required = ["customer", "restaurant"]

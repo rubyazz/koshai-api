@@ -1,6 +1,7 @@
+from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
-from django.contrib.auth import get_user_model
+
 
 class RoleRequiredMixin(UserPassesTestMixin):
     roles_required = []

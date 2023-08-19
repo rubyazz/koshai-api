@@ -1,6 +1,6 @@
 from rest_framework import routers
 
-from .views import RestaurantViewSet, CategoryMenuItemViewSet, MenuItemViewSet
+from .views import CategoryMenuItemViewSet, MenuItemViewSet, RestaurantViewSet
 
 app_name = "restaurants"
 
