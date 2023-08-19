@@ -21,3 +21,36 @@ class Restaurant(models.Model):
 
     def __str__(self):
         return self.name or self.user.email
+
+
+class CategoryMenuItem(models.Model):
+    name = models.CharField(max_length=200)
+    is_active = models.BooleanField(_("is active"), default=True)
+
+    class Meta:
+        verbose_name = _("Menu Item Category")
+        verbose_name_plural = _("Menu Item Categories")
+
+    def __str__(self) -> str:
+        return self.name
+
+
+class MenuItem(models.Model):
+    restaurant = models.ForeignKey("restaurants.Restaurant", on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    price = models.DecimalField(
+        max_digits=8, decimal_places=2, blank=True, null=True
+    )
+    image = models.ImageField(
+        _("image"), upload_to="menu/items/", blank=True, null=True
+    )
+    category = models.ForeignKey(CategoryMenuItem, on_delete=models.CASCADE)
+    description = models.CharField(max_length=500)
+
+    class Meta:
+        verbose_name = _("Menu Item")
+        verbose_name_plural = _("Menu Items")
+
+    def __str__(self) -> str:
+        return self.name
+        
