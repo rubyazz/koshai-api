@@ -1,6 +1,6 @@
 from api.users.serializers import UserSerializer
 from rest_framework import serializers
-from restaurants.models import Restaurant
+from restaurants.models import CategoryMenuItem, MenuItem, Restaurant
 
 
 class RestaurantListSerializer(serializers.ModelSerializer):
@@ -29,3 +29,16 @@ class RestaurantDetailsSerializer(serializers.ModelSerializer):
             "address",
             "status",
         )
+
+
+class CategoryMenuItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CategoryMenuItem
+        fields = ("id", "name", "is_active")
+
+class MenuItemSerializer(serializers.ModelSerializer):
+    category = CategoryMenuItemSerializer()
+
+    class Meta:
+        model = MenuItem
+        fields = ("id", "name", "price", "image", "category", "description")

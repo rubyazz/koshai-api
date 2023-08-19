@@ -1,15 +1,14 @@
-from api.permissions import IsCourier
 from couriers.models import Courier
-from rest_framework.permissions import IsAuthenticated
+from api.mixins import RoleRequiredMixin
 from rest_framework.viewsets import ModelViewSet
 
 from .serializers import CourierDetailsSerializer, CourierListSerializer
 
 
-class CourierViewSet(ModelViewSet):
+class CourierViewSet(RoleRequiredMixin, ModelViewSet):
     queryset = Courier.objects.all()
     serializer_class = CourierListSerializer
-    permission_classes = [IsAuthenticated, IsCourier]
+    roles_required = ["courier"] 
 
     def get_serializer_class(self):
         if self.action in ("retrieve", "update"):
