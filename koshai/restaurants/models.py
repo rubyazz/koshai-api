@@ -29,6 +29,9 @@ class CategoryMenuItem(models.Model):
     """CategoryMenuItem model for Database"""
 
     name = models.CharField(max_length=200)
+    restaurant = models.ForeignKey(
+        "restaurants.Restaurant", on_delete=models.CASCADE, null=True
+    )
     is_active = models.BooleanField(_("is active"), default=True)
 
     class Meta:

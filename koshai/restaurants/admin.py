@@ -30,6 +30,7 @@ class CategoryMenuItemAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "name",
+        "restaurant",
         "is_active",
     )
     list_filter = ("is_active",)
