@@ -4,6 +4,7 @@ from users.models import CustomUser
 
 
 class Restaurant(models.Model):
+    """ Restaurant model for Database """
     STATUS_CHOICES = [
         ("OPEN", "Open"),
         ("CLOSED", "Closed"),
@@ -19,11 +20,12 @@ class Restaurant(models.Model):
         default="OPEN",
     )
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name or self.user.email
 
 
 class CategoryMenuItem(models.Model):
+    """ CategoryMenuItem model for Database """
     name = models.CharField(max_length=200)
     is_active = models.BooleanField(_("is active"), default=True)
 
@@ -36,6 +38,7 @@ class CategoryMenuItem(models.Model):
 
 
 class MenuItem(models.Model):
+    """ MenuItem model for Database """
     restaurant = models.ForeignKey("restaurants.Restaurant", on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     price = models.DecimalField(
