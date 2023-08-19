@@ -4,7 +4,8 @@ from users.models import CustomUser
 
 
 class Restaurant(models.Model):
-    """ Restaurant model for Database """
+    """Restaurant model for Database"""
+
     STATUS_CHOICES = [
         ("OPEN", "Open"),
         ("CLOSED", "Closed"),
@@ -25,7 +26,8 @@ class Restaurant(models.Model):
 
 
 class CategoryMenuItem(models.Model):
-    """ CategoryMenuItem model for Database """
+    """CategoryMenuItem model for Database"""
+
     name = models.CharField(max_length=200)
     is_active = models.BooleanField(_("is active"), default=True)
 
@@ -38,12 +40,11 @@ class CategoryMenuItem(models.Model):
 
 
 class MenuItem(models.Model):
-    """ MenuItem model for Database """
+    """MenuItem model for Database"""
+
     restaurant = models.ForeignKey("restaurants.Restaurant", on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
-    price = models.DecimalField(
-        max_digits=8, decimal_places=2, blank=True, null=True
-    )
+    price = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
     image = models.ImageField(
         _("image"), upload_to="menu/items/", blank=True, null=True
     )
@@ -56,4 +57,3 @@ class MenuItem(models.Model):
 
     def __str__(self) -> str:
         return self.name
-        
