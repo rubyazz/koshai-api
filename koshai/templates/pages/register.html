@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link href="{% static 'css/register.css' %}" type="text/css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+
+    <h2>User Registration</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+
+</body>
+
+</html>
