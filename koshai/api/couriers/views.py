@@ -6,6 +6,8 @@ from .serializers import CourierDetailsSerializer, CourierListSerializer
 
 
 class CourierViewSet(RoleRequiredMixin, ModelViewSet):
+    """Couriers CRUD api"""
+
     queryset = Courier.objects.all()
     serializer_class = CourierListSerializer
     roles_required = ["courier"]

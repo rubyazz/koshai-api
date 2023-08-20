@@ -11,6 +11,8 @@ from .serializers import (
 
 
 class RestaurantViewSet(RoleRequiredMixin, ModelViewSet):
+    """Restaurant CRUD api"""
+
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantListSerializer
     roles_required = ["restaurant"]
@@ -22,12 +24,16 @@ class RestaurantViewSet(RoleRequiredMixin, ModelViewSet):
 
 
 class CategoryMenuItemViewSet(RoleRequiredMixin, ModelViewSet):
+    """Category of MenuItem CRUD api"""
+
     queryset = CategoryMenuItem.objects.all()
     serializer_class = CategoryMenuItemSerializer
     roles_required = ["customer", "restaurant"]
 
 
 class MenuItemViewSet(RoleRequiredMixin, ModelViewSet):
+    """MenuItem CRUD api"""
+
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
     roles_required = ["customer", "restaurant"]
