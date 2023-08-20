@@ -15,7 +15,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("main/", views.main, name="main"),
     path("", TemplateView.as_view(template_name="pages/index.html"), name="home"),
-    path('register/', UserRegisterView.as_view(), name='register'),
+    path("register/", UserRegisterView.as_view(), name="register"),
     path("api/", include("api.routers")),
     path("docs/", schema_view),
     path("api/drf-auth/", include("rest_framework.urls")),
