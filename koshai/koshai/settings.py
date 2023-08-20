@@ -58,6 +58,7 @@ API_APPS = [
     "rest_framework_simplejwt",
     "django_filters",
     "debug_toolbar",
+    "corsheaders",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + API_APPS + OWN_APPS
@@ -186,6 +187,8 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
+
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000"]
 
 # if DEBUG:
 #     import socket  # only if you haven't already imported this
