@@ -5,15 +5,14 @@ from django.urls import include, path
 from django.views.generic import TemplateView
 from rest_framework_swagger.views import get_swagger_view
 
-from . import views
-from .views import UserRegisterView
+from .views import UserRegisterView, main
 
 schema_view = get_swagger_view(title="Koshai API")
 
 urlpatterns = [
-    path("grappelli/", include("grappelli.urls")),  # grappelli URLS
+    path("grappelli/", include("grappelli.urls")),
     path("admin/", admin.site.urls),
-    path("main/", views.main, name="main"),
+    path("main/", main, name="main"),
     path("", TemplateView.as_view(template_name="pages/index.html"), name="home"),
     path("register/", UserRegisterView.as_view(), name="register"),
     path("api/", include("api.routers")),

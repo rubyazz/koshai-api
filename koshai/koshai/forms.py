@@ -21,10 +21,7 @@ class UserRegistrationForm(UserCreationForm):
             "role",
         ]
 
-
-# def __init__(self, *args, **kwargs):
-# 	super(SignUpForm, self).__init__(*args, **kwargs)
-
-# 	self.fields['username'].widget.attrs['class'] = 'form-control'
-# 	self.fields['password1'].widget.attrs['class'] = 'form-control'
-# 	self.fields['password2'].widget.attrs['class'] = 'form-control'
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name in self.fields:
+            self.fields[field_name].widget.attrs["class"] = "form-control"
