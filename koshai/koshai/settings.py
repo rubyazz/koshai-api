@@ -31,7 +31,15 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+OWN_APPS = [
+    "customers",
+    "couriers",
+    "orders",
+    "restaurants",
+    "users",
+]
+
+DJANGO_APPS = [
     "grappelli",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -40,6 +48,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.gis",
+]
+
+API_APPS = [
     "rest_framework_swagger",
     "rest_framework",
     "rest_framework.authtoken",
@@ -47,12 +58,9 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "django_filters",
     "debug_toolbar",
-    "customers",
-    "couriers",
-    "orders",
-    "restaurants",
-    "users",
 ]
+
+INSTALLED_APPS = DJANGO_APPS + API_APPS + OWN_APPS
 
 REST_FRAMEWORK = {"DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema"}
 
@@ -184,6 +192,6 @@ INTERNAL_IPS = [
 #     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
 #     INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + ["127.0.0.1", "10.0.2.2"]
 
-# TODO: need to add django-dotenv
+# TODO: need to add django-dotenv, filters for order history, tests for all crud
 
 # +7 708 540 2076 Altel
