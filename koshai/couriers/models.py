@@ -17,7 +17,11 @@ class Courier(models.Model):
     )
     first_name = models.CharField(_("first name"), max_length=100, null=True)
     last_name = models.CharField(_("last name"), max_length=100, null=True)
-    coordinates = models.PointField(_("coordinates"), blank=True)
+    coordinates = models.PointField(
+        _("coordinates"),
+        blank=True,
+        null=True,
+    )
 
     def __str__(self) -> str:
         return f"Courier: {self.first_name}" or self.user.email
