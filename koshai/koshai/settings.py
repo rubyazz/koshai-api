@@ -59,6 +59,9 @@ API_APPS = [
     "django_filters",
     "debug_toolbar",
     "corsheaders",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + API_APPS + OWN_APPS
@@ -114,6 +117,7 @@ DATABASES = {
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "api.restauth.backends.PhoneNumberModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
 
@@ -190,11 +194,28 @@ INTERNAL_IPS = [
 
 CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000"]
 
+
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "APP": {
+            "client_id": "your-google-client-id",
+            "secret": "your-google-client-secret",
+        },
+    },
+    "facebook": {
+        "APP": {
+            "client_id": "your-facebook-app-id",
+            "secret": "your-facebook-app-secret",
+        },
+    },
+}
+
+
 # if DEBUG:
 #     import socket  # only if you haven't already imported this
 #     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
 #     INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + ["127.0.0.1", "10.0.2.2"]
 
-# TODO: need to add django-dotenv, filters for order history, tests for all crud
+# TODO: need to add django-dotenv, filters for order history, tests for all crud, and error messages during registration
 
 # +7 708 540 2076 Altel
