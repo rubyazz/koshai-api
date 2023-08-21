@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-{% load socialaccount %}
+
 <html>
 <head>
 	<title></title>
@@ -51,9 +51,9 @@
                         <label for="{{ form.role.id_for_label }}" class="form-label">Роль</label>
                         {{ form.role }}
                     </div>
-
+                    {% load socialaccount %}
                     <a href="{% provider_login_url 'google' %}">Login with Google</a>
-                    <a href="{% provider_login_url 'facebook' %}">Login with Facebook</a>
+                    {% comment %} <a href="{% provider_login_url 'facebook' %}">Login with Facebook</a> {% endcomment %}
 
                     <!-- Add reCAPTCHA or other fields as needed -->
                     <button id="button" type="submit" class="btn btn-success form-group">Отправить</button>

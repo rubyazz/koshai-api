@@ -4,12 +4,15 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import TemplateView
 from rest_framework_swagger.views import get_swagger_view
+from allauth.account.views import LoginView, SignupView
 
 from .views import UserRegisterView, main
 
 schema_view = get_swagger_view(title="Koshai API")
 
 urlpatterns = [
+    path('accounts/login/', LoginView.as_view(), name='account_login'),
+    path('accounts/signup/', SignupView.as_view(), name='account_signup'),
     path("grappelli/", include("grappelli.urls")),
     path("admin/", admin.site.urls),
     path("main/", main, name="main"),
