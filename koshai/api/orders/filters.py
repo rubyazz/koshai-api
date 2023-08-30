@@ -1,7 +1,6 @@
 from datetime import timedelta
 
 import django_filters.rest_framework as filters
-
 from orders.models import Order
 
 
@@ -25,4 +24,3 @@ class OrderFilter(filters.FilterSet):
             date_to = value + timedelta(days=1, hours=-6)
             queryset = queryset.filter(created_at__lte=date_to)
         return queryset
-
