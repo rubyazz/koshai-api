@@ -3,7 +3,6 @@ from api.mixins import RoleRequiredMixin
 from customers.models import Customer
 from orders.models import Order, OrderItem
 from rest_framework import generics
-from rest_framework.permissions import AllowAny
 
 from .filters import OrderFilter
 from .serializers import OrderItemSerializer, OrderSerializer
@@ -20,7 +19,6 @@ class CreateOrderView(RoleRequiredMixin, generics.CreateAPIView):
 
 class OrderHistoryView(RoleRequiredMixin, generics.ListAPIView):
     serializer_class = OrderSerializer
-    permission_classes = [AllowAny]
     roles_required = ["customer"]
     filterset_class = OrderFilter
     filter_backends = [filters.DjangoFilterBackend]
