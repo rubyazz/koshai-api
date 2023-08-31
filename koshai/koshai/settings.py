@@ -52,6 +52,7 @@ API_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.facebook",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + API_APPS + OWN_APPS
@@ -120,6 +121,8 @@ ADMINS = [("""Yersultan Abduvalov""", "ersultan.abduvalov@gmail.com")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
 
+GRAPPELLI_ADMIN_TITLE = "Koshai Service"
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -137,6 +140,25 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "%(levelname)s %(asctime)s %(module)s "
+            "%(process)d %(thread)d %(message)s"
+        }
+    },
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
+        }
+    },
+    "root": {"level": "INFO", "handlers": ["console"]},
+}
 
 
 # django-rest-framework
@@ -215,6 +237,9 @@ INTERNAL_IPS = [
 
 CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000"]
 
+
+# django-allauth
+
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_USERNAME_REQUIRED = False
@@ -222,7 +247,15 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 LOGIN_REDIRECT_URL = "/"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-ACCOUNT_EMAIL_VERIFICATION = "none"
+# ACCOUNT_EMAIL_VERIFICATION = "none"
+# # https://django-allauth.readthedocs.io/en/latest/configuration.html
+# ACCOUNT_ADAPTER = "beksar.users.adapters.AccountAdapter"
+# # https://django-allauth.readthedocs.io/en/latest/forms.html
+# ACCOUNT_FORMS = {"signup": "beksar.users.forms.UserSignupForm"}
+# # https://django-allauth.readthedocs.io/en/latest/configuration.html
+# SOCIALACCOUNT_ADAPTER = "beksar.users.adapters.SocialAccountAdapter"
+# # https://django-allauth.readthedocs.io/en/latest/forms.html
+# SOCIALACCOUNT_FORMS = {"signup": "beksar.users.forms.UserSocialSignupForm"}
 
 
 SOCIALACCOUNT_PROVIDERS = {
@@ -232,13 +265,12 @@ SOCIALACCOUNT_PROVIDERS = {
             "secret": "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",
         },
     },
-    # "facebook": {
-    #     "APP": {
-    #         "client_id": "f",
-    #         "secret": "f",
-    #         # "key": "f",
-    #     },
-    # },
+    "facebook": {
+        "APP": {
+            "client_id": "f",
+            "secret": "f",
+        },
+    },
 }
 
 
@@ -249,4 +281,4 @@ SOCIALACCOUNT_PROVIDERS = {
 
 # TODO: need to add django-dotenv, filters for order history, tests for all crud, and error messages during registration
 
-# +7 708 540 2076 Altel
+# +7 708 540 2076 ALTEL
