@@ -1,8 +1,10 @@
+import django_filters.rest_framework as filters
 from api.mixins import RoleRequiredMixin
 from customers.models import Customer
 from orders.models import Order, OrderItem
 from rest_framework import generics
 
+from .filters import OrderFilter
 from .serializers import OrderItemSerializer, OrderSerializer
 
 
@@ -18,6 +20,8 @@ class CreateOrderView(RoleRequiredMixin, generics.CreateAPIView):
 class OrderHistoryView(RoleRequiredMixin, generics.ListAPIView):
     serializer_class = OrderSerializer
     roles_required = ["customer"]
+    filterset_class = OrderFilter
+    filter_backends = [filters.DjangoFilterBackend]
 
     def get_queryset(self):
         customer = Customer.objects.get(user=self.request.user)

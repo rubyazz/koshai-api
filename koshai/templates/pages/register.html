@@ -52,8 +52,10 @@
                         {{ form.role }}
                     </div>
                     {% load socialaccount %}
-                    <a href="{% provider_login_url 'google' %}">Login with Google</a>
-                    {% comment %} <a href="{% provider_login_url 'facebook' %}">Login with Facebook</a> {% endcomment %}
+                    <div class="providers">
+                        <a href="{% provider_login_url 'google' %}">Login with Google</a>
+                        <a href="{% provider_login_url 'facebook' %}">Login with Facebook</a>
+                    </div>
 
                     <!-- Add reCAPTCHA or other fields as needed -->
                     <button id="button" type="submit" class="btn btn-success form-group">Отправить</button>
