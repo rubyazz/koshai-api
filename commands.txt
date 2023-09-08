@@ -1,0 +1,4 @@
+
+# for docs
+cd koshai-delivery-service/docs
+make run-docs
