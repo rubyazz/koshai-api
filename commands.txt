@@ -1,5 +1,4 @@
 
 # for docs
-cd /home/rubyazz/django-pr/koshai-delivery-service/docs/_build/
-python -m http.server
-
+cd koshai-delivery-service/docs
+make run-docs

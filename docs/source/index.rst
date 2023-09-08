@@ -10,6 +10,8 @@ Welcome to koshai's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   run_django.rst
+
 
 
 Indices and tables
