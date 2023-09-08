@@ -8,6 +8,12 @@ from rest_framework_swagger.views import get_swagger_view
 
 from .views import UserRegisterView, main
 
+
+def trigger_error(request):
+    division_by_zero = 1 / 0
+    return division_by_zero
+
+
 schema_view = get_swagger_view(title="Koshai API")
 
 urlpatterns = [
@@ -22,6 +28,7 @@ urlpatterns = [
     path("docs/", schema_view),
     path("api/drf-auth/", include("rest_framework.urls")),
     path("accounts/", include("allauth.urls")),
+    path("sentry-debug/", trigger_error),
     path("__debug__/", include("debug_toolbar.urls")),
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
 ]
