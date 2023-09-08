@@ -1,0 +1,5 @@
+
+# for docs
+cd /home/rubyazz/django-pr/koshai-delivery-service/docs/_build/
+python -m http.server
+
