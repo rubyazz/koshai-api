@@ -6,7 +6,7 @@
 `need to add autodeployment`
 `async django`
 `celery`
-`RABBITMQ`
+`RABBITMQ`j
 
 ![Flows drawio](https://github.com/rubyazz/koshai-api/assets/98265750/ac99bb0c-2507-44fa-b044-cc673cc352bd)
 
