@@ -7,7 +7,6 @@
 `async django`
 `celery`
 `RABBITMQ`
-j
 ![Flows drawio](https://github.com/rubyazz/koshai-api/assets/98265750/ac99bb0c-2507-44fa-b044-cc673cc352bd)
 
 ![Architectural overview](https://github.com/rubyazz/koshai-api/assets/98265750/c752082a-c9a5-484a-8977-b778b076e0c6)
